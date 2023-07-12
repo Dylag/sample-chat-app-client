@@ -1,17 +1,21 @@
 package com.example.testjavafx;
 
-import javafx.application.Application;
+import com.example.testjavafx.MessageReceiver;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.InetAddress;
 import java.net.Socket;
 
 
-public class HelloController {
+public class ChatController {
     String serverIP = "";
     int serverPort = 0;
     static String nickname = "noname";
@@ -33,8 +37,9 @@ public class HelloController {
     TextArea chatArea;
 
     @FXML
+    Button setNick_btn;
+    @FXML
     TextField nicknameField;
-
     @FXML
     protected void onConnectToServerClick()
     {
@@ -69,9 +74,17 @@ public class HelloController {
     }
 
     @FXML
-    protected  void setNickname()
+    protected  void setNickname() throws IOException
     {
         nickname = nicknameField.getText();
+
+        Stage stage = (Stage) setNick_btn.getScene().getWindow();
+        stage.close();
+        Stage newStage = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("TestPage.fxml"));
+        newStage.setTitle("this is new stage");
+        newStage.setScene(new Scene(root,500,500));
+        newStage.show();
     }
 
 }

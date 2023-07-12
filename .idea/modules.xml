@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fx.iml" filepath="$PROJECT_DIR$/.idea/fx.iml" />
-      <module fileurl="file://$PROJECT_DIR$/testJavaFx/testJavaFx.iml" filepath="$PROJECT_DIR$/testJavaFx/testJavaFx.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/chatClient.iml" filepath="$PROJECT_DIR$/.idea/chatClient.iml" />
     </modules>
   </component>
 </project>
