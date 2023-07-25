@@ -11,21 +11,14 @@ import java.net.InetAddress;
 public class ChatApplication extends Application {
 
 
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(ChatApplication.class.getResource("ConnectingScene.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Hello!");
+        stage.setTitle("Sample chat app");
         stage.setScene(scene);
         stage.show();
-        try
-        {
-            ChatController.nickname = InetAddress.getLocalHost().toString();
-        }
-        catch(Exception ex)
-        {
-            //System.out.println(ex);
-        }
         stage.setOnCloseRequest(windowEvent -> {
             System.out.println("closing...");
             javafx.application.Platform.exit();

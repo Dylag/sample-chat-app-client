@@ -26,15 +26,15 @@
                     <GridPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </GridPane.margin></Label>
-                <TextArea fx:id="ta_username" prefHeight="200.0" prefWidth="200.0" promptText="Enter username" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                <TextField fx:id="tf_username" prefHeight="200.0" prefWidth="200.0" promptText="Enter username" text="newUser" GridPane.columnSpan="2" GridPane.rowIndex="1">
                     <font>
                         <Font size="35.0" />
                     </font>
                     <GridPane.margin>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                     </GridPane.margin>
-                </TextArea>
-                <PasswordField fx:id="pf_password" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Enter password" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                </TextField>
+                <PasswordField fx:id="pf_password" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Enter password" text="123123" GridPane.columnSpan="2" GridPane.rowIndex="2">
                     <font>
                         <Font size="35.0" />
                     </font>

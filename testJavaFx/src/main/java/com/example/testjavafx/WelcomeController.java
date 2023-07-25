@@ -31,6 +31,8 @@ public class WelcomeController {
     {
         ServerConnector.out.println("log");
         Stage stage = (Stage) btn_login.getScene().getWindow();
+        System.out.println(1);
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("AuthScene.fxml"))));
+        System.out.println(2);
     }
 }

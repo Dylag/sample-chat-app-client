@@ -6,7 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextArea;
-import javafx.scene.text.Text;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.io.IOException;
 public class AuthController {
 
     @FXML
-    TextArea ta_username;
+    TextField tf_username;
 
     @FXML
     PasswordField pf_password;
@@ -22,7 +22,7 @@ public class AuthController {
     @FXML
     public void auth() throws IOException
     {
-        String username = ta_username.getText();
+        String username = tf_username.getText();
         String password = pf_password.getText();
 
 
@@ -42,7 +42,7 @@ public class AuthController {
         {
             User.name = username;
 
-            Stage stage = (Stage) ta_username.getScene().getWindow();
+            Stage stage = (Stage) tf_username.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatScene.fxml"))));
         } else
             showError(response);
@@ -52,7 +52,7 @@ public class AuthController {
     {
         ServerConnector.out.println("|back");
 
-        Stage stage = (Stage) ta_username.getScene().getWindow();
+        Stage stage = (Stage) tf_username.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
     }
 
