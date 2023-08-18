@@ -22,17 +22,13 @@ public class WelcomeController {
     }
     public void registration() throws IOException
     {
-        ServerConnector.out.println("reg");
         Stage stage = (Stage) btn_registration.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RegistrationScene.fxml"))));
     }
 
     public void auth() throws IOException
     {
-        ServerConnector.out.println("log");
         Stage stage = (Stage) btn_login.getScene().getWindow();
-        System.out.println(1);
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("AuthScene.fxml"))));
-        System.out.println(2);
     }
 }

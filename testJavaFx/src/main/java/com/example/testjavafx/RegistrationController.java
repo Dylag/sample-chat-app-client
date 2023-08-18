@@ -17,22 +17,23 @@ public class RegistrationController {
     @FXML
     public PasswordField pf_password;
 
+    @FXML
+    public void initialize(){
+        ServerConnector.out.println("reg");
+    }
 
     @FXML
     public void registration() throws IOException {
         String username = ta_username.getText();
         String password = pf_password.getText();
 
-        ServerConnector.out.println(username);
-
+        ServerConnector.out.println(username + "|" + password);
         String response = ServerConnector.in.readLine();
         if(response.equals("no"))
             showError();
         else
         {
-            ServerConnector.out.println(password);
             User.name = username;
-
             Stage stage = (Stage) ta_username.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatScene.fxml"))));
         }
@@ -46,8 +47,6 @@ public class RegistrationController {
 
         Stage stage = (Stage) ta_username.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
-
-
     }
 
     private void showError()

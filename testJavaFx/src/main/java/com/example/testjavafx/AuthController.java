@@ -20,32 +20,27 @@ public class AuthController {
     PasswordField pf_password;
 
     @FXML
+    public void initialize(){
+        ServerConnector.out.println("log");
+    }
+
+    @FXML
     public void auth() throws IOException
     {
         String username = tf_username.getText();
         String password = pf_password.getText();
 
 
-        ServerConnector.out.println(username);
+        ServerConnector.out.println(username + "|" + password);
         String response = ServerConnector.in.readLine();
 
-        if(response.equals("Unknown username")) {
-            showError(response);
-            return;
-        }
-
-        ServerConnector.out.println(password);
-
-        response = ServerConnector.in.readLine();
-
-        if (response.equals("yes"))
-        {
+        if(response.equals("yes")) {
             User.name = username;
 
             Stage stage = (Stage) tf_username.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatScene.fxml"))));
         } else
-            showError(response);
+            showError("Some error");
     }
 
     public void back() throws IOException
