@@ -26,6 +26,8 @@ public class ServerConnector implements Runnable{
     public void run()
     {
         try{
+            System.out.println(String.format("Connecting to server: %s$%d",ip,port));
+
             socket = new Socket(InetAddress.getByName(ip),port);
 
             in= new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -33,12 +35,8 @@ public class ServerConnector implements Runnable{
 
             System.out.println(in.readLine());
             out.println("hello from " + InetAddress.getLocalHost());
-
-
-
         } catch (Exception ex){
             System.out.println(ex);
         }
     }
-
 }

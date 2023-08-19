@@ -33,10 +33,10 @@ public class AuthController {
 
         ServerConnector.out.println(username + "|" + password);
         String response = ServerConnector.in.readLine();
-
+        System.out.println(response);
         if(response.equals("yes")) {
             User.name = username;
-
+            System.out.println("logged");
             Stage stage = (Stage) tf_username.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatScene.fxml"))));
         } else

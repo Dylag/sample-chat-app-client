@@ -35,12 +35,10 @@ public class ConnectingController {
         int port = Integer.parseInt(ta_port.getText());
         Thread serverConnector = new Thread(new ServerConnector(ip,port));
         serverConnector.start();
-        System.out.println(String.format("Connecting to server: %s$%d",ip,port));
+
         connectingState = true;
 
-        if (ServerConnector.socket.isConnected()) {
-            mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
-            System.out.println(String.format("Connected to server: %s$%d",ip,port));
-        }
+        mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
+        System.out.println(String.format("Connected to server: %s$%d",ip,port));
     }
 }

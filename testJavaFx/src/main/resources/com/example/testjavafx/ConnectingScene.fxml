@@ -24,7 +24,7 @@
                   <Font size="43.0" />
                </font>
             </Label>
-            <TextArea fx:id="ta_ip" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Enter IP" text="192.168.0.12" GridPane.rowIndex="1">
+            <TextArea fx:id="ta_ip" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="Enter IP" text="10.91.51.62" GridPane.rowIndex="1">
                <font>
                   <Font name="JetBrains Mono Regular" size="26.0" />
                </font>
