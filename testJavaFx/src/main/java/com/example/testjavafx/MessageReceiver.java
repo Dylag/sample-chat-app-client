@@ -33,6 +33,7 @@ public class MessageReceiver implements Runnable{
         {
             try {
                 String message = ServerConnector.in.readLine();
+                System.out.println(message);
                 ta_chat.appendText(message + "\n");
             } catch (Exception ex) {
                 System.out.println(ex);

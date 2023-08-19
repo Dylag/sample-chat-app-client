@@ -30,6 +30,4 @@ public class ChatController {
         ServerConnector.out.println(String.format("%s: %s",User.name, tf_message.getText()));
         tf_message.setText("");
     }
-
-
 }
