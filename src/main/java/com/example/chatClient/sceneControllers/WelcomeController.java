@@ -16,6 +16,7 @@ public class WelcomeController {
     @FXML
     Button btn_login;
 
+
     public void close()
     {
         javafx.application.Platform.exit();
@@ -23,12 +24,12 @@ public class WelcomeController {
     public void registration() throws IOException
     {
         Stage stage = (Stage) btn_registration.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("RegistrationScene.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("RegistrationScene.fxml"))));
     }
 
     public void auth() throws IOException
     {
         Stage stage = (Stage) btn_login.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("AuthScene.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("AuthScene.fxml"))));
     }
 }

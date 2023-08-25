@@ -39,7 +39,7 @@ public class RegistrationController {
         {
             User.name = username;
             Stage stage = (Stage) ta_username.getScene().getWindow();
-            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("ChatScene.fxml"))));
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("ChatScene.fxml"))));
         }
 
     }
@@ -50,7 +50,7 @@ public class RegistrationController {
         ServerConnector.out.println("|back");
 
         Stage stage = (Stage) ta_username.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("WelcomeScene.fxml"))));
     }
 
     private void showError()

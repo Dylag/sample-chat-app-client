@@ -30,7 +30,7 @@ public class ConnectingController {
     @FXML
     protected void connect() throws IOException
     {
-        mainStage = (Stage) ta_ip.getScene().getWindow();
+
 
         String ip = ta_ip.getText();
         int port = Integer.parseInt(ta_port.getText());
@@ -39,7 +39,10 @@ public class ConnectingController {
 
         connectingState = true;
 
-        mainStage.setScene(new Scene(FXMLLoader.load(getClass().getResource("WelcomeScene.fxml"))));
         System.out.println(String.format("Connected to server: %s$%d",ip,port));
+
+        mainStage = (Stage) ta_ip.getScene().getWindow();
+        mainStage.setScene(new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("WelcomeScene.fxml"))));
+
     }
 }
